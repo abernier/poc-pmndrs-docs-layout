@@ -1,5 +1,5 @@
 import cn from '@/lib/cn'
-import { ComponentProps, ReactNode } from 'react'
+import { ComponentProps } from 'react'
 
 //
 // https://codepen.io/abernier/pen/dyBwQqq?editors=1100
@@ -22,21 +22,25 @@ import { ComponentProps, ReactNode } from 'react'
 
 // see: tailwind.config.ts for grid-areas-* values
 
-export function Layout({ children }: { children?: ReactNode; header?: ReactNode; nav?: ReactNode; aside?: ReactNode }) {
+export function Layout({ className, ...props }: ComponentProps<'div'>) {
   return (
     <div
-      className={cn('grid gap-x-4 min-h-dvh', [
-        'grid-cols-[1fr] grid-rows-[var(--header-height)_1fr] grid-areas-layout-1col',
-        'md:grid-cols-[var(--side-w)_1fr] md:grid-areas-layout-2cols',
-        'lg:grid-cols-[var(--side-w)_1fr_var(--side-w)] lg:grid-areas-layout-3cols'
-      ])}>
-      {children}
-    </div>
+      className={cn(
+        'grid min-h-dvh gap-x-4',
+        [
+          'grid-areas-layout-1col grid-cols-[1fr] grid-rows-[var(--header-height)_1fr]',
+          'md:grid-areas-layout-2cols md:grid-cols-[var(--side-w)_1fr]',
+          'lg:grid-areas-layout-3cols lg:grid-cols-[var(--side-w)_1fr_var(--side-w)]'
+        ],
+        className
+      )}
+      {...props}
+    />
   )
 }
 
 export function LayoutContent({ className, ...props }: ComponentProps<'main'>) {
-  return <main className={cn('grid-in-m', className)} {...props} />
+  return <main className={cn('grid-in-m min-w-0', className)} {...props} />
 }
 
 export function LayoutHeader({ className, ...props }: ComponentProps<'header'>) {
