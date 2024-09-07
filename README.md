@@ -1,4 +1,4 @@
-https://github.com/abernier/poc-pmndrs-docs-layout/blob/71d38c67244e205291f353f397ab66452ef8e702/src/components/Layout.tsx
+see: [src/components/Layout.tsx](src/components/Layout.tsx)
 
 <details>
 
