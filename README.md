@@ -1,3 +1,5 @@
+https://github.com/abernier/poc-pmndrs-docs-layout/blob/71d38c67244e205291f353f397ab66452ef8e702/src/components/Layout.tsx
+
 <details>
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
