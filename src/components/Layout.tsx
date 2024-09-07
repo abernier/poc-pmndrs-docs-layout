@@ -20,6 +20,8 @@ import { ComponentProps, ReactNode } from 'react'
 // </Layout>
 //
 
+// see: tailwind.config.ts for grid-areas-* values
+
 export function Layout({ children }: { children?: ReactNode; header?: ReactNode; nav?: ReactNode; aside?: ReactNode }) {
   return (
     <div
