@@ -1,19 +1,31 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ['./src/pages/**/*.{js,ts,jsx,tsx,mdx}', './src/components/**/*.{js,ts,jsx,tsx,mdx}', './src/app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
+      gridTemplateAreas: {
+        'layout-1col': [
+          //
+          'h h',
+          'm m'
+        ],
+        'layout-2cols': [
+          //
+          'h h',
+          'n m'
+        ],
+        'layout-3cols': [
+          //
+          'h h h',
+          'n m t'
+        ]
+      }
+    }
   },
-  plugins: [],
-};
-export default config;
+  plugins: [require('@savvywombat/tailwindcss-grid-areas')],
+  variants: {
+    gridTemplateAreas: ['responsive']
+  }
+}
+export default config
